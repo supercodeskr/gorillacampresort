@@ -250,7 +250,7 @@ export default function MobileBottomNav() {
           -webkit-backdrop-filter: blur(12px);
           border: 2px solid #c8a55a; /* Golden amber highlight */
           display: flex;
-          justifyContent: space-around;
+          justify-content: space-around;
           align-items: center;
           padding: 12px 24px;
           border-radius: 999px;

@@ -230,10 +230,10 @@ export default function Footer() {
       <style jsx global>{`
         .footer-link {
           display: block;
-          fontSize: 0.85rem;
+          font-size: 0.85rem;
           color: #9ca3af;
-          marginBottom: 12px;
-          textDecoration: none;
+          margin-bottom: 12px;
+          text-decoration: none;
           transition: color 0.2s;
         }
         .footer-link:hover {
