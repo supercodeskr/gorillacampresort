@@ -54,7 +54,7 @@ export default function MobileBottomNav() {
 
   return (
     <>
-      <div className="fixed bottom-0 md:bottom-6 left-0 md:left-1/2 md:-translate-x-1/2 w-full md:w-[90%] md:max-w-[600px] bg-white md:bg-white/90 backdrop-blur-md md:border-2 border-t md:border-t-2 border-gray-200 md:border-[#c8a55a] flex justify-around items-center px-4 md:px-6 py-3 md:py-3 rounded-none md:rounded-full z-[999] shadow-[0_-4px_12px_rgba(0,0,0,0.05)] md:shadow-[0_10px_40px_rgba(200,165,90,0.3),0_4px_12px_rgba(0,0,0,0.1)]">
+      <div className="universal-bottom-nav">
         {/* 1-4: Standard Links */}
         {navItems.map(({ href, label, labelJp, icon: Icon }) => {
           const isActive = activeHash === href;
@@ -203,7 +203,7 @@ export default function MobileBottomNav() {
             position: 'relative'
           }}
         >
-          <div className={`${animateCart ? 'animate-bounce' : (cartCount > 0 ? 'animate-pulse' : '')}`} style={{ 
+          <div className="cart-icon-wrapper" style={{ 
             position: 'relative', 
             marginBottom: '4px',
           }}>
@@ -236,6 +236,67 @@ export default function MobileBottomNav() {
       </div>
 
       <SearchModal isOpen={isSearchOpen} onClose={() => setIsSearchOpen(false)} />
+
+      <style dangerouslySetInnerHTML={{ __html: `
+        .universal-bottom-nav {
+          position: fixed;
+          bottom: 24px;
+          left: 50%;
+          transform: translateX(-50%);
+          background-color: rgba(255, 255, 255, 0.9);
+          backdrop-filter: blur(12px);
+          -webkit-backdrop-filter: blur(12px);
+          border: 2px solid #c8a55a;
+          display: flex;
+          justify-content: space-around;
+          align-items: center;
+          padding: 12px 24px;
+          border-radius: 999px;
+          z-index: 999;
+          box-shadow: 0 10px 40px rgba(200, 165, 90, 0.3), 0 4px 12px rgba(0,0,0,0.1);
+          width: 90%;
+          max-width: 600px;
+        }
+
+        .cart-icon-wrapper.animate-bounce {
+          animation: bounceCart 0.6s cubic-bezier(0.36, 0, 0.66, -0.56);
+        }
+        .cart-icon-wrapper.animate-pulse {
+          animation: pulseCart 2s infinite;
+        }
+
+        @keyframes bounceCart {
+          0%, 100% { transform: scale(1); }
+          25% { transform: scale(1.4) translateY(-4px); }
+          50% { transform: scale(0.9) translateY(2px); }
+          75% { transform: scale(1.15) translateY(-2px); }
+        }
+
+        @keyframes pulseCart {
+          0% { transform: scale(1); }
+          50% { transform: scale(1.05); }
+          100% { transform: scale(1); }
+        }
+
+        @media (max-width: 768px) {
+          .universal-bottom-nav {
+            bottom: 0;
+            left: 0;
+            transform: none;
+            width: 100%;
+            max-width: 100%;
+            border-radius: 0;
+            padding: 12px 16px 24px;
+            border-top: 1px solid rgba(0, 0, 0, 0.08);
+            border-left: none;
+            border-right: none;
+            border-bottom: none;
+            background-color: #ffffff;
+            backdrop-filter: none;
+            -webkit-backdrop-filter: none;
+          }
+        }
+      `}} />
     </>
   );
 }

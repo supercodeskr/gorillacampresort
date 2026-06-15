@@ -69,7 +69,7 @@ export default function Footer() {
           zIndex: 2,
         }}
       >
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
+        <div className="footer-grid">
           <div>
             <Image
               src="/images/logo.png"
@@ -115,7 +115,7 @@ export default function Footer() {
                 <Link
                   key={link.label}
                   href={link.href}
-                  className="block text-[0.85rem] text-gray-400 mb-3 no-underline transition-colors duration-200 hover:text-[#c8a55a]"
+                  className="footer-link"
                 >
                   {t(link.label, link.labelJp, link.labelNp)}
                 </Link>
@@ -183,7 +183,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-16 pt-8 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center text-center sm:text-left gap-4">
+        <div className="footer-bottom">
           <p
             style={{
               fontFamily: 'var(--font-inter)',
@@ -195,11 +195,57 @@ export default function Footer() {
             &copy; 2026 Gorilla Camp Resort. All rights reserved.
           </p>
           <div style={{ display: 'flex', gap: 24 }}>
-            <a href="https://www.instagram.com/gorillacampresort?igsh=M3ZvaDFrMWNsM3hk" target="_blank" rel="noopener noreferrer" className="block text-[0.85rem] text-gray-400 no-underline transition-colors duration-200 hover:text-[#c8a55a]">Instagram</a>
-            <a href="https://www.facebook.com/share/1CzsvceMuS/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" className="block text-[0.85rem] text-gray-400 no-underline transition-colors duration-200 hover:text-[#c8a55a]">Facebook</a>
+            <a href="https://www.instagram.com/gorillacampresort?igsh=M3ZvaDFrMWNsM3hk" target="_blank" rel="noopener noreferrer" className="footer-link">Instagram</a>
+            <a href="https://www.facebook.com/share/1CzsvceMuS/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" className="footer-link">Facebook</a>
           </div>
         </div>
       </div>
+
+      <style dangerouslySetInnerHTML={{ __html: `
+        .footer-grid {
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+          gap: 48px;
+        }
+
+        .footer-bottom {
+          margin-top: 64px;
+          padding-top: 32px;
+          border-top: 1px solid rgba(255, 255, 255, 0.1);
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          flex-wrap: wrap;
+          gap: 16px;
+        }
+
+        .footer-link {
+          display: block;
+          font-size: 0.85rem;
+          color: #9ca3af;
+          margin-bottom: 12px;
+          text-decoration: none;
+          transition: color 0.2s;
+        }
+        .footer-link:hover {
+          color: #c8a55a;
+        }
+
+        @media (max-width: 1024px) {
+          .footer-grid {
+            grid-template-columns: repeat(2, 1fr);
+          }
+        }
+        @media (max-width: 640px) {
+          .footer-grid {
+            grid-template-columns: 1fr;
+          }
+          .footer-bottom {
+            flex-direction: column;
+            text-align: center;
+          }
+        }
+      `}} />
     </footer>
   );
 }
