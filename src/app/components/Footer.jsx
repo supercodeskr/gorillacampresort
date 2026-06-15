@@ -69,16 +69,7 @@ export default function Footer() {
           zIndex: 2,
         }}
       >
-        {/* Main grid */}
-        <div
-          style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(4, 1fr)',
-            gap: 48,
-          }}
-          className="footer-grid"
-        >
-          {/* Column 1 — Brand */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
           <div>
             <Image
               src="/images/logo.png"
@@ -98,14 +89,13 @@ export default function Footer() {
               }}
             >
               {t(
-                'Saitama\'s premier wilderness dining experience. 100+ Guest Capacity, 5+ Cuisine Styles, and over 500㎡ of Jungle Oasis.',
-                '埼玉のプレミアムジャングルBBQ体験。100名収容、5カ国の料理、500㎡以上の大自然リゾート。',
-                'साइतामाको प्रिमियर जङ्गल डाइनिङ अनुभव। १००+ अतिथि क्षमता, ५+ परिकार शैलीहरू, र ५००㎡ भन्दा बढी जङ्गल ओएसिस।'
+                'Saitama\'s premier wilderness dining experience. 100+ Guest Capacity, 5+ Cuisine Styles, and over 500m² of Jungle Oasis.',
+                '埼玉のプレミアな野生のダイニング体験。100名以上の収容人数、5種類以上の料理スタイル、そして500平方メートルを超えるジャングルのオアシス。',
+                'साइतामाको प्रिमियर जङ्गल डाइनिङ अनुभव। १००+ अतिथि क्षमता, ५+ भोजन शैलीहरू, र ५०० वर्ग मिटर भन्दा बढी जङ्गल ओएसिस।'
               )}
             </p>
           </div>
 
-          {/* Column 2 — Navigation */}
           <div>
             <h4
               style={{
@@ -118,14 +108,14 @@ export default function Footer() {
                 marginBottom: 20,
               }}
             >
-              {t('Legal', '法的情報', 'कानुनी')}
+              {t('Legal', '法的情報', 'कानूनी')}
             </h4>
             <nav>
               {legalLinks.map((link) => (
                 <Link
                   key={link.label}
                   href={link.href}
-                  className="footer-link"
+                  className="block text-[0.85rem] text-gray-400 mb-3 no-underline transition-colors duration-200 hover:text-[#c8a55a]"
                 >
                   {t(link.label, link.labelJp, link.labelNp)}
                 </Link>
@@ -133,7 +123,6 @@ export default function Footer() {
             </nav>
           </div>
 
-          {/* Column 3 — Contact */}
           <div>
             <h4
               style={{
@@ -146,11 +135,11 @@ export default function Footer() {
                 marginBottom: 20,
               }}
             >
-              {t('Contact Us', 'お問い合わせ', 'सम्पर्क गर्नुहोस्')}
+              {t('Contact Us', 'お問い合わせ', 'सम्पर्क गर्नुहोस')}
             </h4>
             <div style={{ fontFamily: 'var(--font-inter)', fontSize: '0.85rem', color: '#9ca3af', lineHeight: 1.8 }}>
               <p style={{ margin: '0 0 12px 0' }}>
-                <strong style={{ color: '#c8a55a', display: 'block', fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '1px' }}>{t('Phone', '電話番号', 'फोन')}</strong>
+                <strong style={{ color: '#c8a55a', display: 'block', fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '1px' }}>{t('Phone', '電話', 'फोन')}</strong>
                 +81 80-3029-3495
               </p>
               <p style={{ margin: '0 0 12px 0' }}>
@@ -166,7 +155,6 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Column 4 - Map */}
           <div>
             <h4
               style={{
@@ -179,7 +167,7 @@ export default function Footer() {
                 marginBottom: 20,
               }}
             >
-              {t('Location', 'アクセス', 'स्थान')}
+              {t('Location', 'ロケーション', 'स्थान')}
             </h4>
             <div style={{ borderRadius: '12px', overflow: 'hidden', boxShadow: '0 4px 20px rgba(0,0,0,0.3)', height: '220px', width: '100%', backgroundColor: '#1f2937' }}>
               <iframe 
@@ -195,20 +183,7 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Bottom bar */}
-        <div
-          style={{
-            marginTop: 64,
-            paddingTop: 32,
-            borderTop: '1px solid rgba(255,255,255,0.1)',
-            display: 'flex',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-            flexWrap: 'wrap',
-            gap: 16,
-          }}
-          className="footer-bottom"
-        >
+        <div className="mt-16 pt-8 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center text-center sm:text-left gap-4">
           <p
             style={{
               fontFamily: 'var(--font-inter)',
@@ -220,42 +195,11 @@ export default function Footer() {
             &copy; 2026 Gorilla Camp Resort. All rights reserved.
           </p>
           <div style={{ display: 'flex', gap: 24 }}>
-            <a href="https://www.instagram.com/gorillacampresort?igsh=M3ZvaDFrMWNsM3hk" target="_blank" rel="noopener noreferrer" className="footer-link">Instagram</a>
-            <a href="https://www.facebook.com/share/1CzsvceMuS/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" className="footer-link">Facebook</a>
+            <a href="https://www.instagram.com/gorillacampresort?igsh=M3ZvaDFrMWNsM3hk" target="_blank" rel="noopener noreferrer" className="block text-[0.85rem] text-gray-400 no-underline transition-colors duration-200 hover:text-[#c8a55a]">Instagram</a>
+            <a href="https://www.facebook.com/share/1CzsvceMuS/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" className="block text-[0.85rem] text-gray-400 no-underline transition-colors duration-200 hover:text-[#c8a55a]">Facebook</a>
           </div>
         </div>
       </div>
-
-      {/* Responsive styles */}
-      <style jsx global>{`
-        .footer-link {
-          display: block;
-          font-size: 0.85rem;
-          color: #9ca3af;
-          margin-bottom: 12px;
-          text-decoration: none;
-          transition: color 0.2s;
-        }
-        .footer-link:hover {
-          color: #c8a55a;
-        }
-
-        @media (max-width: 1024px) {
-          .footer-grid {
-            grid-template-columns: repeat(2, 1fr) !important;
-          }
-        }
-        @media (max-width: 640px) {
-          .footer-grid {
-            grid-template-columns: 1fr !important;
-          }
-          .footer-bottom {
-            flex-direction: column !important;
-            align-items: center !important;
-            text-align: center;
-          }
-        }
-      `}</style>
     </footer>
   );
 }
