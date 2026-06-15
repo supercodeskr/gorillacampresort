@@ -99,24 +99,6 @@ export default function GatePreloader({ onComplete }) {
       <div ref={rayRef} className="gate-light-ray" />
       <div ref={flareRef} className="gate-light-flare" />
 
-      {/* Floating Jungle fireflies */}
-      <div className="jungle-dust">
-        {particles.map(p => (
-          <div
-            key={p.id}
-            className="dust-particle"
-            style={{
-              width: `${p.size}px`,
-              height: `${p.size}px`,
-              left: p.left,
-              animationDelay: p.delay,
-              animationDuration: p.duration,
-              opacity: p.opacity,
-            }}
-          />
-        ))}
-      </div>
-
       {/* Double-door Gate Panels */}
       <div ref={containerRef} className="gates-container">
         
@@ -135,7 +117,7 @@ export default function GatePreloader({ onComplete }) {
           {/* Left half of ancient gorilla knocker */}
           <div className="ancient-knocker-half left-knocker">
             <div className="medallion-split">
-              <img src="/images/logo.png" className="medallion-logo" alt="GCR Logo" />
+              <img src="/images/gorilla-palm.png" className="medallion-logo" alt="Gorilla Palm" />
             </div>
             <div className="ring-split" />
           </div>
@@ -156,7 +138,7 @@ export default function GatePreloader({ onComplete }) {
           {/* Right half of ancient gorilla knocker */}
           <div className="ancient-knocker-half right-knocker">
             <div className="medallion-split">
-              <img src="/images/logo.png" className="medallion-logo" alt="GCR Logo" />
+              <img src="/images/gorilla-palm.png" className="medallion-logo" alt="Gorilla Palm" />
             </div>
             <div className="ring-split" />
           </div>

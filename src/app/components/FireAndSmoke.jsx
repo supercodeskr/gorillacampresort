@@ -7,22 +7,24 @@ export default function FireAndSmoke() {
   const [smokes, setSmokes] = useState([]);
 
   useEffect(() => {
-    // Generate sparks (Reduced count for performance)
-    const newSparks = Array.from({ length: 15 }).map((_, i) => ({
-      id: i,
-      left: Math.random() * 60 + 20, // 20% to 80% (center of grill)
-      size: Math.random() * 4 + 2, // 2px to 6px
-      duration: Math.random() * 2 + 1.5, // 1.5s to 3.5s
-      delay: Math.random() * 3, // 0s to 3s
+    // Glowing charcoal embers (stay mostly stationary)
+    const newEmbers = Array.from({ length: 40 }).map((_, i) => ({
+      id: `ember-${i}`,
+      left: Math.random() * 80 + 10, // Spread across the grill bottom (10% to 90%)
+      bottom: Math.random() * 15 + 2, // Stay low (2% to 17% height)
+      size: Math.random() * 6 + 3, // 3px to 9px
+      duration: Math.random() * 2 + 1, // Pulse duration
+      delay: Math.random() * 2,
     }));
-    setSparks(newSparks);
+    setSparks(newEmbers); // Re-using sparks state for embers
 
-    // Generate smoke wisps (Visible white smoke)
-    const newSmokes = Array.from({ length: 10 }).map((_, i) => ({
-      id: i,
-      left: Math.random() * 50 + 25, // 25% to 75%
-      size: Math.random() * 150 + 100, // 100px to 250px
-      duration: Math.random() * 5 + 4, // 4s to 9s
+    // Generate smoke wisps (Visible white smoke, strictly from middle, sharp and tall)
+    const newSmokes = Array.from({ length: 12 }).map((_, i) => ({
+      id: `smoke-${i}`,
+      left: Math.random() * 20 + 40, // Tighter center: 40% to 60%
+      width: Math.random() * 40 + 30, // Narrower width (30px to 70px)
+      height: Math.random() * 150 + 100, // Taller height (100px to 250px)
+      duration: Math.random() * 4 + 3.5, // 3.5s to 7.5s (slightly faster to reach the top)
       delay: Math.random() * 4,
     }));
     setSmokes(newSmokes);
@@ -41,74 +43,74 @@ export default function FireAndSmoke() {
       {/* Smoke Wisps */}
       {smokes.map((smoke) => (
         <div
-          key={`smoke-${smoke.id}`}
+          key={smoke.id}
           className="smoke-particle"
           style={{
             position: 'absolute',
-            bottom: '10%', // Start above the bottom edge of the image (on the meat)
+            bottom: '15%', // Start from the center meat
             left: `${smoke.left}%`,
-            width: `${smoke.size}px`,
-            height: `${smoke.size}px`,
+            width: `${smoke.width}px`,
+            height: `${smoke.height}px`,
             backgroundColor: 'transparent',
-            background: 'radial-gradient(circle, rgba(255, 255, 255, 0.4) 0%, transparent 60%)', // More visible white smoke
+            background: 'radial-gradient(ellipse at center, rgba(200, 200, 200, 0.35) 0%, transparent 60%)', // Sharp ellipse shape
             borderRadius: '50%',
-            animation: `floatUp ${smoke.duration}s ease-in-out infinite`,
+            animation: `floatSmoke ${smoke.duration}s ease-in infinite`,
             animationDelay: `${smoke.delay}s`,
             opacity: 0,
+            filter: 'blur(4px)', // Slight blur but retains sharp vertical shape
           }}
         />
       ))}
 
-      {/* Fire Sparks */}
-      {sparks.map((spark) => (
+      {/* Glowing Charcoal Embers */}
+      {sparks.map((ember) => (
         <div
-          key={`spark-${spark.id}`}
-          className="spark-particle"
+          key={ember.id}
+          className="ember-particle"
           style={{
             position: 'absolute',
-            bottom: '5%', // Start from the glowing charcoal area
-            left: `${spark.left}%`,
-            width: `${spark.size}px`,
-            height: `${spark.size}px`,
-            backgroundColor: '#ff2a00', // Intense red/orange
-            boxShadow: '0 0 10px rgba(255, 50, 0, 0.8)', // Simplified shadow for performance
+            bottom: `${ember.bottom}%`,
+            left: `${ember.left}%`,
+            width: `${ember.size}px`,
+            height: `${ember.size}px`,
+            backgroundColor: '#ff2a00',
+            boxShadow: '0 0 12px 2px rgba(255, 50, 0, 0.9)',
             borderRadius: '50%',
-            animation: `sparkUp ${spark.duration}s ease-out infinite`,
-            animationDelay: `${spark.delay}s`,
-            opacity: 0,
+            animation: `pulseEmber ${ember.duration}s alternate infinite`,
+            animationDelay: `${ember.delay}s`,
+            opacity: 0.8,
           }}
         />
       ))}
 
       <style jsx global>{`
-        @keyframes floatUp {
+        @keyframes floatSmoke {
           0% {
-            transform: translateY(0) scale(1) translateX(0);
+            transform: translateY(0) scaleX(1) scaleY(1) translateX(0);
             opacity: 0;
           }
           15% {
-            opacity: 0.9; // Highly visible
-            transform: translateY(-10vh) scale(1.2) translateX(10px);
+            opacity: 0.85;
+            transform: translateY(-10vh) scaleX(1.2) scaleY(1.5) translateX(3px);
           }
           100% {
-            transform: translateY(-80vh) scale(4) translateX(-40px);
+            transform: translateY(-120vh) scaleX(2.5) scaleY(3) translateX(-10px); /* Goes way up off screen */
             opacity: 0;
           }
         }
 
-        @keyframes sparkUp {
+        @keyframes pulseEmber {
           0% {
-            transform: translateY(0) translateX(0) scale(1);
-            opacity: 0;
-          }
-          20% {
-            opacity: 1;
-            backgroundColor: '#fbbf24'; // Shifts to yellow/orange as it flies up
-            boxShadow: '0 0 8px 2px rgba(245, 158, 11, 0.8)';
+            opacity: 0.4;
+            transform: scale(0.8) translateY(0);
+            box-shadow: 0 0 8px 1px rgba(255, 40, 0, 0.6);
+            background-color: #d11e00;
           }
           100% {
-            transform: translateY(-15vh) translateX(${Math.random() * 30 - 15}px) scale(0);
-            opacity: 0;
+            opacity: 1;
+            transform: scale(1.2) translateY(-2px); /* Very subtle float */
+            box-shadow: 0 0 20px 4px rgba(255, 120, 0, 0.9);
+            background-color: #ffaa00; /* Shift to bright orange/yellow when hot */
           }
         }
       `}</style>

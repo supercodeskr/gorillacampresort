@@ -8,8 +8,12 @@ import ExperienceSection from './components/ExperienceSection';
 import AppMenu from './components/AppMenu';
 import JungleIntro from './components/JungleIntro';
 import GorillaCompanion from './components/GorillaCompanion';
+import GatePreloader from './components/GatePreloader';
+import { useState } from 'react';
 
 export default function Home() {
+  const [showGate, setShowGate] = useState(false);
+
   useEffect(() => {
     // Dynamically import ScrollTrigger to avoid SSR issues
     const init = async () => {
@@ -38,15 +42,27 @@ export default function Home() {
     };
 
     init();
+
+    // Check if the user has seen the gate this session
+    if (!sessionStorage.getItem('hasSeenGate')) {
+      setShowGate(true);
+    }
   }, []);
 
+  const handleGateComplete = () => {
+    setShowGate(false);
+    sessionStorage.setItem('hasSeenGate', 'true');
+  };
+
   return (
-    <main style={{ backgroundColor: 'var(--color-bg)', minHeight: '100vh', }}>
-      {/* TEMPORARILY DISABLED: Causes lag on user's laptop in dev mode */}
-      {/* <HeroSection /> */}
-      <AppMenu />
-      <StorySection />
-      <ExperienceSection />
-    </main>
+    <>
+      {showGate && <GatePreloader onComplete={handleGateComplete} />}
+      <main style={{ backgroundColor: 'var(--color-bg)', minHeight: '100vh', opacity: showGate ? 0 : 1, transition: 'opacity 1s ease' }}>
+        <HeroSection />
+        <AppMenu />
+        <StorySection />
+        <ExperienceSection />
+      </main>
+    </>
   );
 }
