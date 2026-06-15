@@ -1,0 +1,10 @@
+﻿const fs = require('fs');
+let content = fs.readFileSync('src/data/menuData.js', 'utf8');
+content = content.replace(/nameJp:\s*'[^']*?\?\?[^']*?'/g, 'nameJp: \'\'');
+content = content.replace(/nameNp:\s*'[^']*?\?\?[^']*?'/g, 'nameNp: \'\'');
+content = content.replace(/descJp:\s*'[^']*?\?\?[^']*?'/g, 'descJp: \'\'');
+content = content.replace(/descNp:\s*'[^']*?\?\?[^']*?'/g, 'descNp: \'\'');
+content = content.replace(/titleJp:\s*'[^']*?\?\?[^']*?'/g, 'titleJp: \'\'');
+content = content.replace(/titleNp:\s*'[^']*?\?\?[^']*?'/g, 'titleNp: \'\'');
+fs.writeFileSync('src/data/menuData.js', content);
+console.log('Cleaned');

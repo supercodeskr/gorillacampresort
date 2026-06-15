@@ -1,0 +1,366 @@
+/* gate.css - 3D Wooden Gate Preloader with Procedural Gorilla Medallion & Ring Knocker */
+
+.gate-preloader-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #040805;
+  overflow: hidden;
+  perspective: 1500px;
+}
+
+/* Atmospheric Background Elements */
+.gate-forest-bg {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle at center, rgba(14, 32, 18, 0.45) 0%, rgba(4, 8, 5, 1) 85%);
+  z-index: 1;
+}
+
+/* Light beams leaking from cracked center */
+.gate-light-ray {
+  position: absolute;
+  top: -20%;
+  left: 50%;
+  width: 14px;
+  height: 140%;
+  background: linear-gradient(to bottom, transparent, rgba(212, 175, 55, 0.4) 20%, rgba(212, 175, 55, 0.8) 50%, rgba(212, 175, 55, 0.4) 80%, transparent);
+  transform: translateX(-50%);
+  filter: blur(14px);
+  z-index: 5;
+  pointer-events: none;
+  animation: pulse-glow 3s ease-in-out infinite alternate;
+}
+
+.gate-light-flare {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 320px;
+  height: 320px;
+  background: radial-gradient(circle, rgba(212, 175, 55, 0.18) 0%, rgba(212, 175, 55, 0.04) 50%, transparent 70%);
+  transform: translate(-50%, -50%);
+  filter: blur(20px);
+  z-index: 4;
+  pointer-events: none;
+  animation: pulse-glow-radial 4s ease-in-out infinite alternate;
+}
+
+/* Floating fireflies */
+.jungle-dust {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.dust-particle {
+  position: absolute;
+  background-color: rgba(212, 175, 55, 0.4);
+  border-radius: 50%;
+  filter: blur(1.5px);
+  animation: float-up 10s linear infinite;
+}
+
+/* Gate Container with 3D perspective */
+.gates-container {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  transform-style: preserve-3d;
+  z-index: 3;
+}
+
+/* Individual Door Panels - Real Jungle Bark Wood Texture */
+.gate-half {
+  flex: 1;
+  height: 100%;
+  position: relative;
+  background-color: #1a110a;
+  background-image: url('/images/jungle-bark.png');
+  background-size: cover;
+  background-position: center;
+  box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.95);
+  transform-origin: left center;
+  transition: transform 0.1s ease-out;
+}
+
+.gate-half.left {
+  background-position: left center;
+}
+
+.gate-half.right {
+  background-position: right center;
+  transform-origin: right center;
+  border-left: 2px solid #080503;
+  /* Flip background horizontally for natural asymmetry */
+  filter: hue-rotate(-5deg) brightness(0.95);
+}
+
+.gate-half::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 50%, transparent 25%, rgba(4, 8, 5, 0.85) 100%);
+  pointer-events: none;
+}
+
+/* Iron hinges and brackets */
+.gate-bracket {
+  position: absolute;
+  height: 28px;
+  background: linear-gradient(to bottom, #242527, #0f1011, #08090a);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.7), inset 0 1px 1px rgba(255,255,255,0.08);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0 12px;
+}
+
+.gate-bracket.top {
+  top: 18%;
+  width: 55%;
+}
+.gate-bracket.bottom {
+  bottom: 18%;
+  width: 55%;
+}
+
+.left .gate-bracket {
+  left: 0;
+  border-radius: 0 8px 8px 0;
+}
+.right .gate-bracket {
+  right: 0;
+  border-radius: 8px 0 0 8px;
+}
+
+/* Iron bolts/nails */
+.gate-bolt {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #444, #0a0a0a 80%);
+  box-shadow: 1px 1px 1px rgba(0,0,0,0.8);
+}
+
+/* Split Ancient Iron/Bronze Gorilla Knocker */
+.ancient-knocker-half {
+  position: absolute;
+  top: 50%;
+  width: 90px;
+  height: 260px;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+
+.left-knocker {
+  right: 0;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.right-knocker {
+  left: 0;
+  display: flex;
+  justify-content: flex-start;
+}
+
+/* Medallion Split base */
+.medallion-split {
+  position: absolute;
+  top: 0;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #443525 0%, #1c150e 100%);
+  border: 5px solid #8c6d3f;
+  box-shadow: 
+    0 10px 25px rgba(0,0,0,0.75), 
+    inset 0 0 15px rgba(0,0,0,0.8),
+    0 0 20px rgba(140, 109, 63, 0.2);
+}
+
+.left-knocker .medallion-split {
+  right: -90px;
+  clip-path: inset(0 90px 0 0);
+}
+
+.right-knocker .medallion-split {
+  left: -90px;
+  clip-path: inset(0 0 0 90px);
+}
+
+/* Monochromatic Bronze Gorilla Logo inside medallion */
+.medallion-logo {
+  position: absolute;
+  width: 110px;
+  height: 110px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  object-fit: contain;
+  /* Turns logo image into a bronze-embossed metal look */
+  filter: sepia(0.95) saturate(2) brightness(0.65) contrast(1.4) drop-shadow(0 2px 6px rgba(0,0,0,0.6));
+}
+
+.left-knocker .medallion-logo {
+  left: 35px; /* Offset to center relative to the full circle */
+}
+
+.right-knocker .medallion-logo {
+  left: -55px; /* Offset to center relative to the full circle */
+}
+
+/* Splitting Heavy Ring */
+.ring-split {
+  position: absolute;
+  top: 130px;
+  width: 100px;
+  height: 100px;
+  border: 9px solid #4a3e2e;
+  border-radius: 50%;
+  background: transparent;
+  box-shadow: 
+    0 8px 16px rgba(0,0,0,0.65), 
+    inset 0 4px 8px rgba(0,0,0,0.8);
+}
+
+.left-knocker .ring-split {
+  right: -50px;
+  clip-path: inset(0 50px 0 0);
+}
+
+.right-knocker .ring-split {
+  left: -50px;
+  clip-path: inset(0 0 0 50px);
+}
+
+/* Interactive Knocker Trigger Panel Overlay (Centered exactly over gorilla knocker) */
+.gate-interactive-trigger {
+  position: absolute;
+  z-index: 20;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  width: 200px;
+  height: 200px;
+  transform: translateY(20px);
+}
+
+/* Floating Golden Runes Label */
+.trigger-label {
+  position: absolute;
+  top: 225px;
+  width: 320px;
+  text-align: center;
+  pointer-events: none;
+}
+
+.rune-text {
+  font-family: var(--font-outfit), sans-serif;
+  font-size: 0.95rem;
+  font-weight: 900;
+  color: #D4AF37;
+  letter-spacing: 0.3em;
+  text-shadow: 0 0 10px rgba(212, 175, 55, 0.7);
+  display: block;
+  margin-bottom: 6px;
+  animation: text-pulse 2s ease-in-out infinite alternate;
+}
+
+.sub-text {
+  font-family: var(--font-inter), sans-serif;
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.45);
+  letter-spacing: 0.1em;
+  display: block;
+  text-transform: uppercase;
+}
+
+/* Pulsing outer glow ring that highlights the gorilla knocker ring */
+.interactive-ring-glow {
+  position: absolute;
+  width: 140px;
+  height: 140px;
+  border: 1px dashed rgba(212, 175, 55, 0.4);
+  border-radius: 50%;
+  animation: glow-rotate 20s linear infinite;
+  box-shadow: 0 0 25px rgba(212, 175, 55, 0.08);
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.gate-interactive-trigger:hover .interactive-ring-glow {
+  border-color: rgba(212, 175, 55, 0.9);
+  transform: scale(1.12);
+  box-shadow: 0 0 40px rgba(212, 175, 55, 0.3);
+  background: rgba(212, 175, 55, 0.03);
+}
+
+/* Animations */
+@keyframes pulse-glow {
+  0% {
+    opacity: 0.45;
+    filter: blur(12px);
+  }
+  100% {
+    opacity: 0.9;
+    filter: blur(16px);
+  }
+}
+
+@keyframes pulse-glow-radial {
+  0% {
+    opacity: 0.35;
+    transform: translate(-50%, -50%) scale(0.92);
+  }
+  100% {
+    opacity: 0.75;
+    transform: translate(-50%, -50%) scale(1.08);
+  }
+}
+
+@keyframes float-up {
+  0% {
+    transform: translateY(110vh) translateX(0) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.75;
+  }
+  90% {
+    opacity: 0.75;
+  }
+  100% {
+    transform: translateY(-10vh) translateX(25px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+@keyframes text-pulse {
+  0% {
+    opacity: 0.7;
+    text-shadow: 0 0 6px rgba(212, 175, 55, 0.4);
+  }
+  100% {
+    opacity: 1;
+    text-shadow: 0 0 14px rgba(212, 175, 55, 0.9);
+  }
+}
+
+@keyframes glow-rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
