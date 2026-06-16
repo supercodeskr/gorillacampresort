@@ -203,14 +203,15 @@
 /* Gorilla Face Logo inside Handle */
 .ring-logo {
   position: absolute;
-  width: 85px;
-  height: 85px;
+  width: 90px;
+  height: 90px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   object-fit: contain;
-  /* Gorilla Shadow Face */
-  filter: brightness(0) opacity(0.7) drop-shadow(0 2px 4px rgba(0,0,0,0.9));
+  /* Gorilla Shadow Face using multiply to hide white background */
+  mix-blend-mode: multiply;
+  filter: sepia(0.8) brightness(0.6) contrast(1.5);
   pointer-events: none;
 }
 
