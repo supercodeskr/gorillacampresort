@@ -72,7 +72,7 @@ export default function MobileBottomNav() {
                 flexDirection: 'column',
                 alignItems: 'center',
                 textDecoration: 'none',
-                color: isActive ? 'var(--color-accent)' : 'var(--color-text-muted)',
+                color: isActive ? 'var(--color-accent)' : '#374151',
                 transition: 'color 0.2s ease',
                 width: '16%', // Distribute evenly
               }}
@@ -81,7 +81,7 @@ export default function MobileBottomNav() {
               <span
                 style={{
                   fontSize: '0.65rem',
-                  fontWeight: isActive ? 600 : 500,
+                  fontWeight: isActive ? 700 : 600,
                   fontFamily: 'var(--font-inter)',
                 }}
               >
@@ -102,13 +102,13 @@ export default function MobileBottomNav() {
             alignItems: 'center',
             background: 'none',
             border: 'none',
-            color: 'var(--color-text-muted)',
+            color: '#374151',
             width: '16%',
             cursor: 'pointer',
           }}
         >
           <SearchIcon size={22} strokeWidth={2} style={{ marginBottom: '4px' }} />
-          <span style={{ fontSize: '0.65rem', fontWeight: 500, fontFamily: 'var(--font-inter)' }}>
+          <span style={{ fontSize: '0.65rem', fontWeight: 600, fontFamily: 'var(--font-inter)' }}>
             {t('Search', '検索', 'खोज')}
           </span>
         </button>
@@ -123,7 +123,7 @@ export default function MobileBottomNav() {
               alignItems: 'center',
               background: 'none',
               border: 'none',
-              color: 'var(--color-text-muted)',
+              color: '#374151',
               cursor: 'pointer',
               width: '100%',
             }}
@@ -131,7 +131,7 @@ export default function MobileBottomNav() {
             <span style={{ fontSize: '20px', lineHeight: '22px', marginBottom: '4px' }}>
               {t('🇺🇸', '🇯🇵', '🇳🇵')}
             </span>
-            <span style={{ fontSize: '0.65rem', fontWeight: 500, fontFamily: 'var(--font-inter)' }}>
+            <span style={{ fontSize: '0.65rem', fontWeight: 600, fontFamily: 'var(--font-inter)' }}>
               {t('EN', 'JP', 'NP')}
             </span>
           </button>
@@ -197,7 +197,7 @@ export default function MobileBottomNav() {
             alignItems: 'center',
             background: 'none',
             border: 'none',
-            color: 'var(--color-text-muted)',
+            color: '#374151',
             width: '16%',
             cursor: 'pointer',
             position: 'relative'
@@ -229,7 +229,7 @@ export default function MobileBottomNav() {
               </span>
             )}
           </div>
-          <span style={{ fontSize: '0.65rem', fontWeight: 500, fontFamily: 'var(--font-inter)' }}>
+          <span style={{ fontSize: '0.65rem', fontWeight: 600, fontFamily: 'var(--font-inter)' }}>
             {t('Cart', 'カート', 'कार्ट')}
           </span>
         </button>
