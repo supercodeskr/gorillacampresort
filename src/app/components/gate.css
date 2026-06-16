@@ -195,17 +195,23 @@
   clip-path: inset(0 0 0 65px);
 }
 
+.circular-text-svg {
+  animation: slow-spin 30s linear infinite;
+  transform-origin: center center;
+}
+
 /* Gorilla Face Logo inside Handle */
 .ring-logo {
   position: absolute;
-  width: 75px;
-  height: 75px;
+  width: 85px;
+  height: 85px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   object-fit: contain;
-  /* Turns logo image into a bronze-embossed metal look */
-  filter: sepia(0.95) saturate(2) brightness(0.65) contrast(1.4) drop-shadow(0 2px 6px rgba(0,0,0,0.6));
+  /* Gorilla Shadow Face */
+  filter: brightness(0) opacity(0.7) drop-shadow(0 2px 4px rgba(0,0,0,0.9));
+  pointer-events: none;
 }
 
 .left-knocker .ring-logo {

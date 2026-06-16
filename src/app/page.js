@@ -13,6 +13,7 @@ import { useState } from 'react';
 
 export default function Home() {
   const [showGate, setShowGate] = useState(false);
+  const [hasChecked, setHasChecked] = useState(false);
 
   useEffect(() => {
     // Dynamically import ScrollTrigger to avoid SSR issues
@@ -47,12 +48,17 @@ export default function Home() {
     if (!sessionStorage.getItem('hasSeenGate')) {
       setShowGate(true);
     }
+    setHasChecked(true);
   }, []);
 
   const handleGateComplete = () => {
     setShowGate(false);
     sessionStorage.setItem('hasSeenGate', 'true');
   };
+
+  if (!hasChecked) {
+    return <main style={{ backgroundColor: '#040805', minHeight: '100vh' }} />;
+  }
 
   return (
     <>

@@ -142,6 +142,7 @@ export default function GatePreloader({ onComplete }) {
                   </textPath>
                 </text>
               </svg>
+              <img src="/images/hero-gorilla.png" className="ring-logo" alt="Gorilla Silhouette" />
             </div>
           </div>
         </div>
@@ -169,6 +170,7 @@ export default function GatePreloader({ onComplete }) {
                   </textPath>
                 </text>
               </svg>
+              <img src="/images/hero-gorilla.png" className="ring-logo" alt="Gorilla Silhouette" />
             </div>
           </div>
         </div>
