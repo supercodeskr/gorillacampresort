@@ -116,10 +116,9 @@ export default function GatePreloader({ onComplete }) {
 
           {/* Left half of ancient gorilla knocker */}
           <div className="ancient-knocker-half left-knocker">
-            <div className="medallion-split">
-              <img src="/images/gorilla-palm.png" className="medallion-logo" alt="Gorilla Palm" />
+            <div className="ring-split">
+              <img src="/images/hero-gorilla.png" className="ring-logo" alt="Gorilla Face" />
             </div>
-            <div className="ring-split" />
           </div>
         </div>
 
@@ -137,10 +136,9 @@ export default function GatePreloader({ onComplete }) {
 
           {/* Right half of ancient gorilla knocker */}
           <div className="ancient-knocker-half right-knocker">
-            <div className="medallion-split">
-              <img src="/images/gorilla-palm.png" className="medallion-logo" alt="Gorilla Palm" />
+            <div className="ring-split">
+              <img src="/images/hero-gorilla.png" className="ring-logo" alt="Gorilla Face" />
             </div>
-            <div className="ring-split" />
           </div>
         </div>
 
@@ -149,10 +147,6 @@ export default function GatePreloader({ onComplete }) {
       {/* Interactive ancient click handler overlay & label */}
       <div ref={buttonRef} className="gate-interactive-trigger" onClick={handleEnterClick}>
         <div className="interactive-ring-glow" />
-        <div className="trigger-label">
-          <span className="rune-text">TAP GORILLA TO ENTER</span>
-          <span className="sub-text">Click the ancient lock to open the resort gates</span>
-        </div>
       </div>
     </div>
   );

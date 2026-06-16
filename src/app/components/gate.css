@@ -155,36 +155,36 @@
   justify-content: flex-start;
 }
 
-/* Medallion Split base */
-.medallion-split {
+/* Single Handle Ring */
+.ring-split {
   position: absolute;
-  top: 0;
-  width: 180px;
-  height: 180px;
+  top: 65px; /* centered vertically in 260px container */
+  width: 130px;
+  height: 130px;
   border-radius: 50%;
   background: radial-gradient(circle, #443525 0%, #1c150e 100%);
-  border: 5px solid #8c6d3f;
+  border: 6px solid #4a3e2e;
   box-shadow: 
-    0 10px 25px rgba(0,0,0,0.75), 
-    inset 0 0 15px rgba(0,0,0,0.8),
-    0 0 20px rgba(140, 109, 63, 0.2);
+    0 8px 16px rgba(0,0,0,0.65), 
+    inset 0 4px 8px rgba(0,0,0,0.8),
+    0 0 15px rgba(212, 175, 55, 0.15); /* Slight golden aura */
 }
 
-.left-knocker .medallion-split {
-  right: -90px;
-  clip-path: inset(0 90px 0 0);
+.left-knocker .ring-split {
+  right: -65px;
+  clip-path: inset(0 65px 0 0);
 }
 
-.right-knocker .medallion-split {
-  left: -90px;
-  clip-path: inset(0 0 0 90px);
+.right-knocker .ring-split {
+  left: -65px;
+  clip-path: inset(0 0 0 65px);
 }
 
-/* Monochromatic Bronze Gorilla Logo inside medallion */
-.medallion-logo {
+/* Gorilla Face Logo inside Handle */
+.ring-logo {
   position: absolute;
-  width: 110px;
-  height: 110px;
+  width: 75px;
+  height: 75px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -193,36 +193,12 @@
   filter: sepia(0.95) saturate(2) brightness(0.65) contrast(1.4) drop-shadow(0 2px 6px rgba(0,0,0,0.6));
 }
 
-.left-knocker .medallion-logo {
-  left: 35px; /* Offset to center relative to the full circle */
+.left-knocker .ring-logo {
+  left: 50%; 
 }
 
-.right-knocker .medallion-logo {
-  left: -55px; /* Offset to center relative to the full circle */
-}
-
-/* Splitting Heavy Ring */
-.ring-split {
-  position: absolute;
-  top: 130px;
-  width: 100px;
-  height: 100px;
-  border: 9px solid #4a3e2e;
-  border-radius: 50%;
-  background: transparent;
-  box-shadow: 
-    0 8px 16px rgba(0,0,0,0.65), 
-    inset 0 4px 8px rgba(0,0,0,0.8);
-}
-
-.left-knocker .ring-split {
-  right: -50px;
-  clip-path: inset(0 50px 0 0);
-}
-
-.right-knocker .ring-split {
-  left: -50px;
-  clip-path: inset(0 0 0 50px);
+.right-knocker .ring-logo {
+  left: 50%; 
 }
 
 /* Interactive Knocker Trigger Panel Overlay (Centered exactly over gorilla knocker) */
@@ -236,38 +212,7 @@
   cursor: pointer;
   width: 200px;
   height: 200px;
-  transform: translateY(20px);
-}
-
-/* Floating Golden Runes Label */
-.trigger-label {
-  position: absolute;
-  top: 225px;
-  width: 320px;
-  text-align: center;
-  pointer-events: none;
-}
-
-.rune-text {
-  font-family: var(--font-outfit), sans-serif;
-  font-size: 0.95rem;
-  font-weight: 900;
-  color: #D4AF37;
-  letter-spacing: 0.3em;
-  text-shadow: 0 0 10px rgba(212, 175, 55, 0.7);
-  display: block;
-  margin-bottom: 6px;
-  animation: text-pulse 2s ease-in-out infinite alternate;
-}
-
-.sub-text {
-  font-family: var(--font-inter), sans-serif;
-  font-size: 0.7rem;
-  font-weight: 500;
-  color: rgba(255, 255, 255, 0.45);
-  letter-spacing: 0.1em;
-  display: block;
-  text-transform: uppercase;
+  transform: translateY(0px); /* adjusted since no text */
 }
 
 /* Pulsing outer glow ring that highlights the gorilla knocker ring */
