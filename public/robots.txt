@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /pos/
+Disallow: /*?*
+Disallow: /product/
+Disallow: /category/
+
+Sitemap: https://gorillacampresort.com/sitemap.xml

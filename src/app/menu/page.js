@@ -127,8 +127,38 @@ export default function MenuPage() {
 
   if (!isClient) return null;
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "name": "Gorilla Camp Resort",
+    "menu": "https://gorillacampresort.com/menu",
+    "servesCuisine": ["Nepali", "BBQ", "Japanese"],
+    "hasMenu": {
+      "@type": "Menu",
+      "name": "Gorilla Camp Resort Menu",
+      "hasMenuSection": menuData.map(cat => ({
+        "@type": "MenuSection",
+        "name": cat.title,
+        "hasMenuItem": cat.items.map(item => ({
+          "@type": "MenuItem",
+          "name": item.name,
+          "description": item.desc,
+          "offers": {
+            "@type": "Offer",
+            "price": item.price,
+            "priceCurrency": "JPY"
+          }
+        }))
+      }))
+    }
+  };
+
   return (
     <main style={{ backgroundColor: '#f9fafb', minHeight: '100vh', paddingBottom: '120px' }}>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       
       {/* Top Header & Search Bar (Sticky) */}
       <div style={{ 
