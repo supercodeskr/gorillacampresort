@@ -45,7 +45,7 @@ export default function Home() {
     init();
 
     // Check if the user has seen the gate this session
-    if (!sessionStorage.getItem('hasSeenGate')) {
+    if (!localStorage.getItem('hasSeenGate')) {
       setShowGate(true);
     }
     setHasChecked(true);
@@ -53,7 +53,7 @@ export default function Home() {
 
   const handleGateComplete = () => {
     setShowGate(false);
-    sessionStorage.setItem('hasSeenGate', 'true');
+    localStorage.setItem('hasSeenGate', 'true');
   };
 
   if (!hasChecked) {

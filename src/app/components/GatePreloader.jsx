@@ -180,6 +180,20 @@ export default function GatePreloader({ onComplete }) {
       {/* Interactive ancient click handler overlay & label */}
       <div ref={buttonRef} className="gate-interactive-trigger" onClick={handleEnterClick}>
         <div className="interactive-ring-glow" />
+        <div style={{
+          position: 'absolute',
+          bottom: '-40px',
+          color: '#D4AF37',
+          fontFamily: 'monospace',
+          letterSpacing: '3px',
+          fontSize: '14px',
+          fontWeight: 'bold',
+          whiteSpace: 'nowrap',
+          animation: 'text-pulse 1.5s infinite alternate',
+          textTransform: 'uppercase'
+        }}>
+          Click or tap to enter
+        </div>
       </div>
     </div>
   );
