@@ -790,9 +790,9 @@ export const menuData = [
         nameJp: 'コンボセット',
         nameNp: 'कम्बो सेट',
         price: 8999,
-        desc: 'Ultimate BBQ combination set.',
-        descJp: '究極のBBQコンボセット。',
-        descNp: 'उत्कृष्ट BBQ कम्बो सेट।',
+        desc: 'Chicken Wings, Pork Meat, Edamame, French Fry, Mix Veg, Chatpat, Panipuri, Juice, Sausage, Chowmin, Pork Spine, Lamb Spine, Mix Fruit, Corn.',
+        descJp: '手羽先、豚肉、枝豆、フライドポテト、ミックスベジ、チャットパット、パニプリ、ジュース、ソーセージ、チョウミン、ポークスピナー、ランプスピナー、ミックスフルーツ、トウモロコシが含まれた豪華コンボ。',
+        descNp: 'चिकेन विंग्स, पोर्क मिट, एडामामे, फ्रेन्च फ्राइज, मिक्स भेज, चटपटे, पानीपुरी, जुस, ससेज, चाउमिन, पोर्क स्पाइन, भेडाको स्पाइन, मिक्स फ्रुट र मकै समावेश कम्बो सेट।',
         image: 'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&q=80&w=800'
       },
       {

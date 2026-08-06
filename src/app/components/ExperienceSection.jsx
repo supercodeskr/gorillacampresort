@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { useLanguage } from '@/context/LanguageContext';
-import { Flame, Coffee, Gamepad2, Utensils, ArrowRight } from 'lucide-react';
+import { Flame, Coffee, Gamepad2, Utensils, ArrowRight, Trophy } from 'lucide-react';
 import Link from 'next/link';
 
 const experiences = [
@@ -51,6 +51,17 @@ const experiences = [
     descNp: 'हाम्रो शेफद्वारा तयार पारिएको प्रामाणिक भारतीय करी र ताजा बेक गरिएको नानको उत्कृष्ट स्वादको आनन्द लिनुहोस्।',
     img: '/images/experiences/curry_naan.png',
     icon: Utensils
+  },
+  {
+    id: 'free_activities',
+    titleEn: 'Free Activities: Pool, Golf & Tennis',
+    titleJp: '無料アクティビティ：プール、ゴルフ、テニス',
+    titleNp: 'नि: शुल्क गतिविधिहरू: पौंडी पोखरी, गल्फ र टेनिस',
+    descEn: 'Enjoy our complimentary activities including a Swimming Pool, Golf, Tennis, and Karaoke during your stay or meal.',
+    descJp: 'ご宿泊やお食事とともに、プール、ゴルフ、テニス、カラオケなどの無料アクティビティをお楽しみください。',
+    descNp: 'तपाईंको बसाइ वा खानाको साथमा पौंडी पोखरी, गल्फ, टेनिस, र कराओके जस्ता हाम्रा नि:शुल्क गतिविधिहरूको आनन्द लिनुहोस्।',
+    img: 'https://images.unsplash.com/photo-1551698618-1dfe5d97d256?auto=format&fit=crop&q=80&w=800',
+    icon: Trophy
   }
 ];
 

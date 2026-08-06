@@ -16,6 +16,9 @@ export default function POS() {
   const [customPrice, setCustomPrice] = useState('');
   const [customQty, setCustomQty] = useState(1);
 
+  // Search state
+  const [searchTerm, setSearchTerm] = useState('');
+
   useEffect(() => {
     setIsClient(true);
   }, []);
@@ -83,7 +86,8 @@ export default function POS() {
   if (!isClient) return null;
 
   return (
-    <div className="pos-container" style={{ display: 'flex', height: '100vh', backgroundColor: '#f3f4f6', fontFamily: 'var(--font-inter)' }}>
+    <>
+      <div className="pos-container" style={{ display: 'flex', height: '100vh', backgroundColor: '#f3f4f6', fontFamily: 'var(--font-inter)' }}>
       
       {/* LEFT PANEL - Menu Grid */}
       <div className="pos-menu" style={{ flex: 1, padding: '24px', overflowY: 'auto' }}>
@@ -120,37 +124,57 @@ export default function POS() {
           </div>
         )}
 
-        {menuData.map(category => (
-          <div key={category.id} style={{ marginBottom: '32px' }}>
-            <h2 style={{ fontSize: '1.2rem', color: '#374151', borderBottom: '2px solid #e5e7eb', paddingBottom: '8px', marginBottom: '16px' }}>
-              {category.titleEn || category.title}
-            </h2>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(160px, 1fr))', gap: '16px' }}>
-              {category.items.map(item => (
-                <button
-                  key={item.id}
-                  onClick={() => addToOrder(item)}
-                  style={{
-                    backgroundColor: '#ffffff',
-                    border: '1px solid #e5e7eb',
-                    borderRadius: '12px',
-                    padding: '16px',
-                    textAlign: 'left',
-                    cursor: 'pointer',
-                    boxShadow: '0 2px 4px rgba(0,0,0,0.05)',
-                    minHeight: '120px',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    justifyContent: 'space-between'
-                  }}
-                >
-                  <span style={{ fontWeight: 600, color: '#111827', fontSize: '0.9rem', lineHeight: 1.3 }}>{item.name}</span>
-                  <span style={{ color: '#059669', fontWeight: 800, marginTop: '8px' }}>¥{item.price.toLocaleString()}</span>
-                </button>
-              ))}
+        <div style={{ marginBottom: '24px' }}>
+          <input 
+            type="text" 
+            placeholder="Search menu items..." 
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+            style={{ width: '100%', padding: '14px', borderRadius: '8px', border: '1px solid #d1d5db', fontSize: '1rem', outline: 'none' }}
+          />
+        </div>
+
+        {menuData.map(category => {
+          const filteredItems = category.items.filter(item => 
+            item.name.toLowerCase().includes(searchTerm.toLowerCase()) || 
+            (item.nameJp && item.nameJp.includes(searchTerm)) ||
+            (item.nameNp && item.nameNp.includes(searchTerm))
+          );
+          
+          if (filteredItems.length === 0) return null;
+
+          return (
+            <div key={category.id} style={{ marginBottom: '32px' }}>
+              <h2 style={{ fontSize: '1.2rem', color: '#374151', borderBottom: '2px solid #e5e7eb', paddingBottom: '8px', marginBottom: '16px' }}>
+                {category.titleEn || category.title}
+              </h2>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(160px, 1fr))', gap: '16px' }}>
+                {filteredItems.map(item => (
+                  <button
+                    key={item.id}
+                    onClick={() => addToOrder(item)}
+                    style={{
+                      backgroundColor: '#ffffff',
+                      border: '1px solid #e5e7eb',
+                      borderRadius: '12px',
+                      padding: '16px',
+                      textAlign: 'left',
+                      cursor: 'pointer',
+                      boxShadow: '0 2px 4px rgba(0,0,0,0.05)',
+                      minHeight: '120px',
+                      display: 'flex',
+                      flexDirection: 'column',
+                      justifyContent: 'space-between'
+                    }}
+                  >
+                    <span style={{ fontWeight: 600, color: '#111827', fontSize: '0.9rem', lineHeight: 1.3 }}>{item.name}</span>
+                    <span style={{ color: '#059669', fontWeight: 800, marginTop: '8px' }}>¥{item.price.toLocaleString()}</span>
+                  </button>
+                ))}
+              </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
 
       {/* RIGHT PANEL - Current Order */}
@@ -206,6 +230,7 @@ export default function POS() {
             <Printer size={24} /> Print Invoice
           </button>
         </div>
+      </div>
       </div>
 
       {/* 
@@ -308,9 +333,17 @@ export default function POS() {
       </div>
 
       <style jsx global>{`
+        /* Hide global website elements (Footer, Chatbot, Mobile Nav) completely on POS page */
+        footer, .universal-bottom-nav, .line-chatbot-widget {
+          display: none !important;
+        }
+
         .invoice-print-only { display: none; }
 
         @media print {
+          /* Ensure global elements stay hidden */
+          footer, .universal-bottom-nav, .line-chatbot-widget { display: none !important; }
+          
           /* Hide POS UI */
           .pos-container { display: none !important; }
           body { background-color: white !important; margin: 0; padding: 0; }
@@ -344,6 +377,6 @@ export default function POS() {
           }
         }
       `}</style>
-    </div>
+    </>
   );
 }
