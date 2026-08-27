@@ -949,4 +949,24 @@ export const menuData = [
       },
     ]
   },
+  {
+    id: 'accommodations',
+    title: 'Accommodations',
+    titleJp: '宿泊施設',
+    titleNp: 'आवास',
+    icon: Leaf,
+    items: [
+      {
+        id: 'cottage-stay',
+        name: '1 Night Cottage Stay',
+        nameJp: 'コテージ1泊',
+        nameNp: '१ रातको कटेज बसाइ',
+        price: 3000,
+        desc: 'Stay 1 night at our beautiful resort cottage as an add-on to your party.',
+        descJp: 'パーティーの追加オプションとして、美しいリゾートコテージに1泊滞在。',
+        descNp: 'तपाईंको पार्टीमा थप विकल्पको रूपमा हाम्रो सुन्दर रिसोर्ट कटेजमा १ रात बस्नुहोस्।',
+        image: 'https://images.unsplash.com/photo-1587061949409-02df41d5e562?auto=format&fit=crop&q=80&w=800'
+      }
+    ]
+  },
 ];
