@@ -80,7 +80,7 @@ export default function MenuReviewPage() {
                       {item.name}
                     </div>
                     <div style={{ fontSize: '0.95rem', fontWeight: '600', color: '#c8a55a' }}>
-                      ¥{item.price.toLocaleString()}
+                      ¥{item.price ? item.price.toLocaleString() : '---'}
                     </div>
                   </div>
 
