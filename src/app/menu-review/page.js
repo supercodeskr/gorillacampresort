@@ -22,10 +22,12 @@ export default function MenuReviewPage() {
     }
 
     let report = "【Menu Review Updates】\nPlease delete the following items from the website:\n\n";
-    menuData.forEach(item => {
-      if (deletedIds.has(item.id)) {
-        report += `- ${item.nameJp} (${item.name})\n`;
-      }
+    menuData.forEach(category => {
+      category.items.forEach(item => {
+        if (deletedIds.has(item.id)) {
+          report += `- ${item.nameJp} (${item.name})\n`;
+        }
+      });
     });
 
     navigator.clipboard.writeText(report).then(() => {
@@ -33,17 +35,8 @@ export default function MenuReviewPage() {
     });
   };
 
-  // Group items by category for cleaner display
-  const groupedMenu = menuData.reduce((acc, item) => {
-    if (!acc[item.category]) {
-      acc[item.category] = [];
-    }
-    acc[item.category].push(item);
-    return acc;
-  }, {});
-
   return (
-    <div style={{ padding: '20px', maxWidth: '800px', margin: '0 auto', fontFamily: 'sans-serif', backgroundColor: '#f9fafb', minHeight: '100vh' }}>
+    <div style={{ padding: '20px', maxWidth: '800px', margin: '0 auto', fontFamily: 'sans-serif', backgroundColor: '#f9fafb', minHeight: '100vh', paddingBottom: '100px' }}>
       <div style={{ backgroundColor: '#fff', padding: '20px', borderRadius: '12px', boxShadow: '0 4px 6px rgba(0,0,0,0.05)', marginBottom: '24px' }}>
         <h1 style={{ fontSize: '1.5rem', fontWeight: 'bold', margin: '0 0 10px 0', color: '#111827' }}>Menu Review Dashboard</h1>
         <p style={{ color: '#4b5563', fontSize: '0.95rem', margin: 0 }}>
@@ -51,14 +44,14 @@ export default function MenuReviewPage() {
         </p>
       </div>
 
-      {Object.entries(groupedMenu).map(([category, items]) => (
-        <div key={category} style={{ marginBottom: '32px' }}>
+      {menuData.map(category => (
+        <div key={category.id} style={{ marginBottom: '32px' }}>
           <h2 style={{ fontSize: '1.25rem', fontWeight: 'bold', color: '#c8a55a', borderBottom: '2px solid #c8a55a', paddingBottom: '8px', marginBottom: '16px' }}>
-            {category.toUpperCase()}
+            {category.title} / {category.titleJp}
           </h2>
           
           <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-            {items.map(item => {
+            {category.items.map(item => {
               const isDeleted = deletedIds.has(item.id);
               return (
                 <div key={item.id} style={{ 
@@ -108,7 +101,7 @@ export default function MenuReviewPage() {
         </div>
       ))}
 
-      <div style={{ position: 'sticky', bottom: '20px', textAlign: 'center', marginTop: '40px' }}>
+      <div style={{ position: 'fixed', bottom: '0', left: '0', right: '0', padding: '20px', backgroundColor: 'rgba(255,255,255,0.9)', backdropFilter: 'blur(10px)', borderTop: '1px solid #e5e7eb', textAlign: 'center', zIndex: 100 }}>
         <button 
           onClick={generateReport}
           style={{
