@@ -101,15 +101,15 @@ export default function MenuReviewPage() {
         </div>
       ))}
 
-      <div style={{ position: 'fixed', bottom: '0', left: '0', right: '0', padding: '20px', backgroundColor: 'rgba(255,255,255,0.9)', backdropFilter: 'blur(10px)', borderTop: '1px solid #e5e7eb', textAlign: 'center', zIndex: 100 }}>
+      <div style={{ textAlign: 'center', marginTop: '40px', marginBottom: '80px', padding: '20px' }}>
         <button 
           onClick={generateReport}
           style={{
             backgroundColor: '#111827',
             color: '#fff',
-            padding: '16px 32px',
+            padding: '20px 32px',
             borderRadius: '50px',
-            fontSize: '1.1rem',
+            fontSize: '1.2rem',
             fontWeight: 'bold',
             border: 'none',
             cursor: 'pointer',
