@@ -801,9 +801,9 @@ export const menuData = [
         nameJp: 'Aコース (デイタイム 120分)',
         nameNp: 'A कोर्स (दिउँसो १२० मिनेट)',
         price: 4999,
-        desc: 'Daytime BBQ course for 120 minutes.',
-        descJp: '120分間のデイタイムBBQコース。',
-        descNp: '१२० मिनेटको दिउँसो BBQ कोर्स।',
+        desc: 'All-You-Can-Drink! Includes Beef, Chicken, Pork, Edamame, French Fries, Mix Veg, Chatpat, Panipuri, Sausage, Seafood. Extensions: +1Hr(¥1000), +2Hr(¥1500), +3Hr(¥2500)',
+        descJp: '飲み放題！牛肉、鶏肉、豚肉、枝豆、ポテト、ミックスベジ、チャットパット、パニプリ、ソーセージ、シーフード込み。延長: +1時間(¥1000), +2時間(¥1500), +3時間(¥2500)',
+        descNp: 'सबै पिउन सक्नुहुन्छ! गाईको मासु, कुखुरा, सुँगुरको मासु, एडामामे, फ्रेन्च फ्राइज, मिक्स भेज, चटपटे, पानीपुरी, ससेज, समुद्री खाना। थप समय: +1 घण्टा(¥1000), +2 घण्टा(¥1500), +3 घण्टा(¥2500)',
         image: 'https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?auto=format&fit=crop&q=80&w=800'
       },
       {
@@ -812,9 +812,9 @@ export const menuData = [
         nameJp: 'ナイトコース (180分)',
         nameNp: 'नाइट कोर्स (१८० मिनेट)',
         price: 7999,
-        desc: 'Evening BBQ course for 180 minutes.',
-        descJp: '180分間のナイトBBQコース。',
-        descNp: '१८० मिनेटको बेलुका BBQ कोर्स।',
+        desc: 'All-You-Can-Drink! Includes Beef, Chicken, Pork, Edamame, French Fries, Mix Veg, Chatpat, Panipuri, Sausage, Seafood. Extensions: +1Hr(¥1500), +2Hr(¥2500), +3Hr(¥3000)',
+        descJp: '飲み放題！牛肉、鶏肉、豚肉、枝豆、ポテト、ミックスベジ、チャットパット、パニプリ、ソーセージ、シーフード込み。延長: +1時間(¥1500), +2時間(¥2500), +3時間(¥3000)',
+        descNp: 'सबै पिउन सक्नुहुन्छ! गाईको मासु, कुखुरा, सुँगुरको मासु, एडामामे, फ्रेन्च फ्राइज, मिक्स भेज, चटपटे, पानीपुरी, ससेज, समुद्री खाना। थप समय: +1 घण्टा(¥1500), +2 घण्टा(¥2500), +3 घण्टा(¥3000)',
         image: 'https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&q=80&w=800'
       },
     ]
@@ -931,9 +931,9 @@ export const menuData = [
         nameJp: 'ウイスキー',
         nameNp: 'व्हिस्की',
         price: 500,
-        desc: 'Suntory, Jack Daniels, Chivas, Red/Black Label, Jameson, Dewar\'s.',
-        descJp: 'サントリー、ジャックダニエル、シーバス、レッド/ブラックラベル、ジェムソン、デュワーズ。',
-        descNp: 'सन्टोरी, ज्याक ड्यानियल, चिभास, रेड/ब्ल्याक लेबल, जेमसन, डेवार्स।',
+        desc: 'Suntory, Red Label, Jameson, Dewar\'s.',
+        descJp: 'サントリー、レッドラベル、ジェムソン、デュワーズ。',
+        descNp: 'सन्टोरी, रेड लेबल, जेमसन, डेवार्स।',
         image: 'https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&q=80&w=800'
       },
       {
