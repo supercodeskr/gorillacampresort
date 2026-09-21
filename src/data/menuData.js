@@ -937,6 +937,17 @@ export const menuData = [
         image: 'https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&q=80&w=800'
       },
       {
+        id: 'wine',
+        name: 'Red / White Wine',
+        nameJp: '赤ワイン / 白ワイン',
+        nameNp: 'रातो / सेतो वाइन',
+        price: 500,
+        desc: 'Glass of Red or White Wine.',
+        descJp: 'グラスワイン（赤・白）',
+        descNp: 'रातो वा सेतो वाइनको गिलास।',
+        image: 'https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&q=80&w=800'
+      },
+      {
         id: 'soft-drinks',
         name: 'Soft Drink',
         nameJp: 'ソフトドリンク',
