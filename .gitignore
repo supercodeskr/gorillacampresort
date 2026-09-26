@@ -27,3 +27,9 @@ yarn-error.log*
 
 # vercel
 .vercel
+
+# Ignored large files
+/invoices for Gorilla Camp BBQ Resort/
+/new menu GCR/
+*.zip
+*.xlsx

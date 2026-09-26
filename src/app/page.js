@@ -9,6 +9,9 @@ import AppMenu from './components/AppMenu';
 import JungleIntro from './components/JungleIntro';
 import GorillaCompanion from './components/GorillaCompanion';
 import GatePreloader from './components/GatePreloader';
+import PricingSection from './components/PricingSection';
+import HowItWorksSection from './components/HowItWorksSection';
+import FacilityMapSection from './components/FacilityMapSection';
 import { useState } from 'react';
 
 export default function Home() {
@@ -65,7 +68,10 @@ export default function Home() {
       {showGate && <GatePreloader onComplete={handleGateComplete} />}
       <main style={{ backgroundColor: 'var(--color-bg)', minHeight: '100vh', opacity: showGate ? 0 : 1, transition: 'opacity 1s ease' }}>
         <HeroSection />
+        <HowItWorksSection />
+        <PricingSection />
         <AppMenu />
+        <FacilityMapSection />
         <StorySection />
         <ExperienceSection />
       </main>

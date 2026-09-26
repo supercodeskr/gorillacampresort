@@ -1,0 +1,81 @@
+Category,Item Name (English),Item Name (Japanese),Price (JPY),Status (Keep/Delete?)
+"Nepali Dhido Set","Mutton Dhido Set","マトン・ディドセット",1800,Keep
+"Nepali Dhido Set","Chicken Dhido Set","チキン・ディドセット",1700,Keep
+"Nepali Dhido Set","Veg Dhido Set","ベジ・ディドセット",1500,Keep
+"Nepali Thakali Khana Set","Mutton Thakali Khana Set","マトン・タカリカナセット",1700,Keep
+"Nepali Thakali Khana Set","Chicken Thakali Khana Set","チキン・タカリカナセット",1300,Keep
+"Nepali Thakali Khana Set","Veg Thakali Khana Set","ベジ・タカリカナセット",1200,Keep
+"Nepali Thakali Khana Set","Pork Thakali Khana Set","ポーク・タカリカナセット",1500,Keep
+"Nepali Thakali Khana Set","Sukuti Thakali Khana Set","スクティ・タカリカナセット",1600,Keep
+"Sekuwa & Choila","Mutton Sekuwa","マトンセクワ",950,Keep
+"Sekuwa & Choila","Chicken Sekuwa","チキンセクワ",800,Keep
+"Sekuwa & Choila","Pork Sekuwa","ポルクセクワ",900,Keep
+"Sekuwa & Choila","Duck Choila","ダックチョイラ",900,Keep
+"Sekuwa & Choila","Mutton Choila","マトンチョイラ",950,Keep
+"Sekuwa & Choila","Chicken Choila","チキンチョイラ",800,Keep
+"Sekuwa & Choila","Pork Choila","ポルクチョイラ",850,Keep
+"Sekuwa & Choila","Veg Choila","野菜チョイラ",700,Keep
+"Snacks","Steam MoMo","スチームモモ",600,Keep
+"Snacks","Soup MoMo","スープモモ",700,Keep
+"Snacks","Fried MoMo","揚げモモ",800,Keep
+"Snacks","Pani Puri","パニプリ",600,Keep
+"Snacks","Chatpat","チャットパット",600,Keep
+"Snacks","Vatamas Sadeko","バタマスサデコ",650,Keep
+"Snacks","Peanut Sadeko","ピーナッツサデコ",700,Keep
+"Snacks","Masala Papad","マサラパパド",600,Keep
+"Curry","Chicken Curry","チキンカレー",800,Keep
+"Curry","Mutton Curry","マトンカレー",1000,Keep
+"Curry","Dal Fry","ダルフライ",600,Keep
+"Curry","Mutton Horenso","マトンほうれん草",950,Keep
+"Curry","Pork Curry","ポークカレー",900,Keep
+"Curry","Chicken Horenso","チキンほうれん草",800,Keep
+"Curry","Mix Vegetable","ミックス野菜カレー",800,Keep
+"Nan & Piza","Butter Nan","バターナン",300,Keep
+"Nan & Piza","Cheese Nan","チーズナン",500,Keep
+"Nan & Piza","Garlic Nan","ガーリックナン",400,Keep
+"Nan & Piza","Mutton Keema Nan","マトンキーマナン",600,Keep
+"Nan & Piza","Chicken Keema Nan","チキンキーマナン",500,Keep
+"Nan & Piza","Masroom Keema Nan","マッシュルームキーマナン",450,Keep
+"Nan & Piza","Banana Keema Nan","バナナキーマナン",500,Keep
+"Nan & Piza","Choco Naan","チョコナン",500,Keep
+"Nan & Piza","Piza Nan","ピザナン",550,Keep
+"Nan & Piza","Mix Veg Nan","ミックスベジナン",500,Keep
+"Nan & Piza","Khajur Nan","カジュールナン",550,Keep
+"Nan & Piza","Fruit Nan","フルーツナン",600,Keep
+"Tandoori & Biryani & Pokoda","Tandoori Chicken Full","タンドリーチキンフル",2000,Keep
+"Tandoori & Biryani & Pokoda","Tandoori Chicken 2 Legs","タンドリーチキン 2p",1050,Keep
+"Tandoori & Biryani & Pokoda","Chicken Tikka","チキンティッカ",900,Keep
+"Tandoori & Biryani & Pokoda","Chicken Paneer Tikka","チキンパニールティッカ",1100,Keep
+"Tandoori & Biryani & Pokoda","Ebi Mayonnaise","エビマヨネーズ",1100,Keep
+"Tandoori & Biryani & Pokoda","Mutton Biryani","マトンビリヤニ",1700,Keep
+"Tandoori & Biryani & Pokoda","Chicken Biryani","チキンビリヤニ",1500,Keep
+"Tandoori & Biryani & Pokoda","Mix Biryani","ミックスビリヤニ",1800,Keep
+"Tandoori & Biryani & Pokoda","Mutton Pokoda","マトンパコダ",1100,Keep
+"Tandoori & Biryani & Pokoda","Chicken Pokoda","チキンパコダ",1000,Keep
+"Tandoori & Biryani & Pokoda","Veg Pokoda","野菜パコダ",900,Keep
+"Tandoori & Biryani & Pokoda","Mushroom Pokoda","キノコパコダ",950,Keep
+"Lassi","Lassi","ラッシー",300,Keep
+"Lassi","Kaju Lassi","カジュラッシー",500,Keep
+"Lassi","Khajur Lassi","カジュールラッシー",600,Keep
+"Lassi","Mango Lassi","マンゴーラッシー",350,Keep
+"Lassi","Orange Lassi","オレンジラッシー",350,Keep
+"Lassi","Strawberry Lassi","ストロベリーラッシー",600,Keep
+"Lassi","Chocolate Lassi","チョコレートラッシー",450,Keep
+"Lassi","Banana Lassi","バナナラッシー",450,Keep
+"Lassi","Kivi Lassi","キウイラッシー",550,Keep
+"BBQ Party Course Menu","Combo Set","コンボセット",8999,Keep
+"BBQ Party Course Menu","A Course (Day Course 120 min)","Aコース (デイタイム 120分)",4999,Keep
+"BBQ Party Course Menu","Night Course (180 min)","ナイトコース (180分)",7999,Keep
+"Drinks","Draft Beer","生ビール",500,Keep
+"Drinks","Corona Beer","コロナビール",550,Keep
+"Drinks","Nepal Ice","ネパールアイス",600,Keep
+"Drinks","Bottle Beer","瓶ビール",600,Keep
+"Drinks","Red/White Wine","赤/白ワイン",400,Keep
+"Drinks","Cocktail","カクテル",450,Keep
+"Drinks","Highball","ハイボール",3800,Keep
+"Drinks","Rum","ラム",500,Keep
+"Drinks","Nihon Shu / Shochu","日本酒 / 焼酎",500,Keep
+"Drinks","Whisky","ウイスキー",500,Keep
+"Drinks","Red / White Wine","赤ワイン / 白ワイン",500,Keep
+"Drinks","Soft Drink","ソフトドリンク",300,Keep
+"Accommodations","1 Night Cottage Stay","コテージ1泊",3000,Keep

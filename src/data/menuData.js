@@ -191,17 +191,6 @@ export const menuData = [
         descNp: 'पिरो पोर्क चोइला।',
         image: 'https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&q=80&w=800'
       },
-      {
-        id: 'veg-choila',
-        name: 'Veg Choila',
-        nameJp: '野菜チョイラ',
-        nameNp: 'भेज चोइला',
-        price: 700,
-        desc: 'Spicy vegetarian choice with soybean and potatoes.',
-        descJp: '大豆とジャガイモを使ったスパイシーなベジタリアンチョイラ。',
-        descNp: 'भटमास र आलुको पिरो शाकाहारी चोइला।',
-        image: 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&q=80&w=800'
-      },
     ]
   },
   {
@@ -461,17 +450,6 @@ export const menuData = [
         image: 'https://images.unsplash.com/photo-1565557618462-817abdf43fdb?auto=format&fit=crop&q=80&w=800'
       },
       {
-        id: 'banana-keema-nan',
-        name: 'Banana Keema Nan',
-        nameJp: 'バナナキーマナン',
-        nameNp: 'केरा किमा नान',
-        price: 500,
-        desc: 'Sweet naan stuffed with banana.',
-        descJp: 'バナナを詰めた甘いナン。',
-        descNp: 'केराले भरिएको गुलियो नान।',
-        image: 'https://images.unsplash.com/photo-1565557618462-817abdf43fdb?auto=format&fit=crop&q=80&w=800'
-      },
-      {
         id: 'choco-nan',
         name: 'Choco Naan',
         nameJp: 'チョコナン',
@@ -491,39 +469,6 @@ export const menuData = [
         desc: 'Naan bread with pizza toppings.',
         descJp: 'ピザのトッピングをしたナンブレッド。',
         descNp: 'पिज्जा टपिङ्स सहितको नान।',
-        image: 'https://images.unsplash.com/photo-1565557618462-817abdf43fdb?auto=format&fit=crop&q=80&w=800'
-      },
-      {
-        id: 'mix-veg-nan',
-        name: 'Mix Veg Nan',
-        nameJp: 'ミックスベジナン',
-        nameNp: 'मिक्स भेज नान',
-        price: 500,
-        desc: 'Stuffed with mixed vegetables.',
-        descJp: 'ミックス野菜を詰めました。',
-        descNp: 'मिक्स तरकारीले भरिएको नान।',
-        image: 'https://images.unsplash.com/photo-1565557618462-817abdf43fdb?auto=format&fit=crop&q=80&w=800'
-      },
-      {
-        id: 'khajur-nan',
-        name: 'Khajur Nan',
-        nameJp: 'カジュールナン',
-        nameNp: 'खजुर नान',
-        price: 550,
-        desc: 'Sweet naan stuffed with dates.',
-        descJp: 'デーツを詰めた甘いナン。',
-        descNp: 'खजुरले भरिएको गुलियो नान।',
-        image: 'https://images.unsplash.com/photo-1565557618462-817abdf43fdb?auto=format&fit=crop&q=80&w=800'
-      },
-      {
-        id: 'fruit-nan',
-        name: 'Fruit Nan',
-        nameJp: 'フルーツナン',
-        nameNp: 'फ्रुट नान',
-        price: 600,
-        desc: 'Sweet naan stuffed with mixed fruits.',
-        descJp: 'ミックスフルーツを詰めた甘いナン。',
-        descNp: 'फलफूलले भरिएको गुलियो नान।',
         image: 'https://images.unsplash.com/photo-1565557618462-817abdf43fdb?auto=format&fit=crop&q=80&w=800'
       },
     ]
@@ -580,17 +525,6 @@ export const menuData = [
         image: 'https://images.unsplash.com/photo-1598514982205-f36b96d1e8d4?auto=format&fit=crop&q=80&w=800'
       },
       {
-        id: 'ebi-mayonnaise',
-        name: 'Ebi Mayonnaise',
-        nameJp: 'エビマヨネーズ',
-        nameNp: 'प्रान मेयोनेज',
-        price: 1100,
-        desc: 'Shrimp mixed with creamy mayonnaise.',
-        descJp: 'クリーミーなマヨネーズと和えたエビ。',
-        descNp: 'मेयोनेजसँग क्रिमी झिंगा माछा।',
-        image: 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&q=80&w=800'
-      },
-      {
         id: 'mutton-biryani',
         name: 'Mutton Biryani',
         nameJp: 'マトンビリヤニ',
@@ -624,17 +558,6 @@ export const menuData = [
         image: 'https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?auto=format&fit=crop&q=80&w=800'
       },
       {
-        id: 'mutton-pokoda',
-        name: 'Mutton Pokoda',
-        nameJp: 'マトンパコダ',
-        nameNp: 'मटन पकोडा',
-        price: 1100,
-        desc: 'Deep-fried mutton fritters.',
-        descJp: 'マトンのフリッター（揚げ物）。',
-        descNp: 'मटनको फ्राई पकोडा।',
-        image: 'https://images.unsplash.com/photo-1627308595229-78308dd0b4e1?auto=format&fit=crop&q=80&w=800'
-      },
-      {
         id: 'chicken-pokoda',
         name: 'Chicken Pokoda',
         nameJp: 'チキンパコダ',
@@ -654,17 +577,6 @@ export const menuData = [
         desc: 'Deep-fried vegetable fritters.',
         descJp: '野菜のフリッター（揚げ物）。',
         descNp: 'तरकारीको फ्राई पकोडा।',
-        image: 'https://images.unsplash.com/photo-1627308595229-78308dd0b4e1?auto=format&fit=crop&q=80&w=800'
-      },
-      {
-        id: 'mushroom-pokoda',
-        name: 'Mushroom Pokoda',
-        nameJp: 'キノコパコダ',
-        nameNp: 'च्याउ पकोडा',
-        price: 950,
-        desc: 'Deep-fried mushroom fritters.',
-        descJp: 'マッシュルームのフリッター（揚げ物）。',
-        descNp: 'च्याउको फ्राई पकोडा।',
         image: 'https://images.unsplash.com/photo-1627308595229-78308dd0b4e1?auto=format&fit=crop&q=80&w=800'
       },
     ]
@@ -959,25 +871,5 @@ export const menuData = [
         image: 'https://images.unsplash.com/photo-1622483767028-3f66f32aef97?auto=format&fit=crop&q=80&w=800'
       },
     ]
-  },
-  {
-    id: 'accommodations',
-    title: 'Accommodations',
-    titleJp: '宿泊施設',
-    titleNp: 'आवास',
-    icon: Leaf,
-    items: [
-      {
-        id: 'cottage-stay',
-        name: '1 Night Cottage Stay',
-        nameJp: 'コテージ1泊',
-        nameNp: '१ रातको कटेज बसाइ',
-        price: 3000,
-        desc: 'Stay 1 night at our beautiful resort cottage as an add-on to your party.',
-        descJp: 'パーティーの追加オプションとして、美しいリゾートコテージに1泊滞在。',
-        descNp: 'तपाईंको पार्टीमा थप विकल्पको रूपमा हाम्रो सुन्दर रिसोर्ट कटेजमा १ रात बस्नुहोस्।',
-        image: 'https://images.unsplash.com/photo-1587061949409-02df41d5e562?auto=format&fit=crop&q=80&w=800'
-      }
-    ]
-  },
+  }
 ];
