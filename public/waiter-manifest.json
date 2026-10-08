@@ -1,0 +1,14 @@
+{
+  "name": "Gorilla Waiter",
+  "short_name": "Waiter",
+  "description": "Gorilla Camp Resort — table orders and bills",
+  "start_url": "/waiter/",
+  "scope": "/waiter/",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#f4f1ea",
+  "theme_color": "#1f3d2b",
+  "icons": [
+    { "src": "/images/logo.png", "sizes": "any", "type": "image/png", "purpose": "any" }
+  ]
+}
